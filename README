@@ -1,0 +1,20 @@
+rdtscfreq -  A small and simple tool which tries to calculate the
+	     running CPU's frequency by using the rdtsc instruction
+
+The idea is simple: use the rdtsc instruction to get the current cycles,
+		    sleep 1 second and then use it again, calculate the
+		    difference, which in an ideal world without sleeping
+		    and frequency changes should be the CPU's frequency in HZ.
+
+Requirement: The running CPU should support the rdtsc instruction.
+
+Compilation:
+ # make
+The above command should produce an executable called "rdtscfreq"
+in the current directory.
+
+Usage: rdtscfreq
+
+Example:
+# ./rdtscfreq
+CPU MHz: 2791
